@@ -129,61 +129,20 @@
         </div>
     </section>
 
-    <section>
-      <div class="container tweet-container">
-        <div class="col-md-2">
-          <img src="./img/fotos de perfil/1.png" class="rounded-circle" alt="Imagen Circular" width="50" height="50">
-        </div>
-        <div class="col-md-9 tweet-body">
-          <div class="name-tweet">
-            <span class="bold-text">Miguel Angel Durán<img src="./img/twitt/verificado.png" alt="verificado" width="20" height="15"></span>
-            <span>@midudev</span>
-            <span class="bold-text">·</span>
-            <span>1h</span>
-          </div>
-          <div class="respuesta-container">
-            <span>En respuesta a</span>
-            <span>@midudev</span>
-          </div>
-          <p>
-            5.Abarca la falta de conocimiento
-            <p></p>
-            Entra una persona nueva en el quipo... <br>
-            ¿Cómo puede saber lo qué puede y no puede hacer? <br>
-            <p></p>
-            -Documenta todos los procesos <br>
-            -Automatiza el estilo de código lo máximo posible <br>
-            -Añade errores claros a los procesos CI <br>
-            -Ten un buen onboarding
-          </p>
-          <div class="reactions-container">
-            <div>
-              <img src="./img/twitt/comentarios.png" id="comentarios" alt="comentarios" width="20" height="20">
-              <span>1</span>
-            </div>
-            <div>
-              <img src="./img/twitt/retwitts.png" alt="retwitts" width="20" height="20">
-              <span>1</span>
-            </div>
-            <div>
-              <img src="./img/twitt/favorito.png" alt="favorito" width="20" height="20">
-              <span>7</span>
-            </div>
-            <div>
-              <img src="./img/twitt/estadisticas.png" alt="estadisticas" width="20" height="20">
-              <span>1.794</span>
-            </div>
-            <div>
-              <img src="./img/twitt/descargar.png" alt="descargar" width="20" height="20">
-            </div>
-          </div>
-        </div>
-        <div class="col-md-1">
-          <p class="bold-text">...</p>
-        </div>
-      </div>
 
-      <div class="container tweet-container">
+    <section class="verUsuarios-section">
+      <div class="btn-group" role="group" aria-label="Basic radio toggle button group" id="radio-container">   
+      </div>
+       
+      </div>
+      <div class="verUsuarios-btn-container">
+        <button id="verUsuario-btn" class="btn rounded-pill bold-text verUsuarios-btn">Ver Usuario</button>
+      </div>
+    </section>
+
+    <section id="apiSection">
+         <div id="apiSectionTweetContainer"></div>
+      <!-- <div class="container tweet-container">
         <div class="col-md-2">
           <img src="./img/fotos de perfil/2.png" class="rounded-circle" alt="Imagen Circular" width="50" height="50">
         </div>
@@ -306,8 +265,96 @@
         <div class="col-md-1">
           <p class="bold-text">...</p>
         </div>
-      </div>
+      </div> -->
     </section>
+    
+    <template id="tweet-template">
+      <div class="container tweet-container">
+        <div class="col-md-2">
+          <img src="./img/fotos de perfil/1.png" class="rounded-circle fotoDePerfil" alt="Imagen Circular" width="50" height="50">
+        </div>
+        <div class="col-md-9 tweet-body">
+          <div class="name-tweet">
+            <span class="bold-text nameApi">Miguel Angel Durán</span>
+            <img src="./img/twitt/verificado.png" alt="verificado" width="20" height="15">
+            <span class="emailApi">@midudev</span>
+            <span class="bold-text">·</span>
+            <span>1h</span>
+          </div>
+          <div class="respuesta-container">
+            <span>En respuesta a</span>
+            <span>@midudev</span>
+          </div>
+          <p class="titleApi"></p>
+          <p class="bodyApi"></p>
+          <div class="reactions-container">
+            <div class="comentarios-container">
+              <img src="./img/twitt/comentarios.png" id="comentarios" alt="comentarios" width="20" height="20">
+              <span>5</span>
+            </div>
+            <div>
+              <img src="./img/twitt/retwitts.png" alt="retwitts" width="20" height="20">
+              <span>1</span>
+            </div>
+            <div>
+              <img src="./img/twitt/favorito.png" alt="favorito" width="20" height="20">
+              <span>7</span>
+            </div>
+            <div>
+              <img src="./img/twitt/estadisticas.png" alt="estadisticas" width="20" height="20">
+              <span>1.794</span>
+            </div>
+            <div>
+              <img src="./img/twitt/descargar.png" alt="descargar" width="20" height="20">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-1">
+          <p class="bold-text">...</p>
+        </div>
+        
+        <div class="container comment-container d-none">
+        </div>
+      </div>
+    </template>
+    
+    <template id="comment-template">
+      <div class="template-comments-container">
+        <div class="col-md-2">
+          <img src="./img/fotos de perfil/2.png" class="rounded-circle fotoDePerfil" alt="Imagen Circular" width="50" height="50">
+        </div>
+        <div class="col-md-9 tweet-body">
+          <div class="name-tweet">
+            <span class="bold-text nameApi nameComent">Miguel Angel Durán</span>
+            <span class="emailComent">@midudev</span>
+            <span class="bold-text">·</span>
+            <span>28 sept.</span>
+          </div>
+          <p class="bodyComent"></p>
+          <div class="reactions-container">
+            <div>
+              <img src="./img/twitt/retwitts.png" alt="retwitts" width="20" height="20">
+              <span>1</span>
+            </div>
+            <div>
+              <img src="./img/twitt/favorito.png" alt="favorito" width="20" height="20">
+              <span>7</span>
+            </div>
+            <div>
+              <img src="./img/twitt/estadisticas.png" alt="estadisticas" width="20" height="20">
+              <span>1.794</span>
+            </div>
+            <div>
+              <img src="./img/twitt/descargar.png" alt="descargar" width="20" height="20">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-1">
+          <p class="bold-text">...</p>
+        </div>
+      </div>
+    
+    </template>  
   </main>
 
   <aside class="col-lg-3">
@@ -425,6 +472,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
+  <script src="./main.js"></script>
 </body>
 
 </html>

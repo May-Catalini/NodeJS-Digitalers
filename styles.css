@@ -203,6 +203,7 @@ main {
     padding: 20px;
     color: var(--white);
     font-size: 16px;
+    flex-wrap: wrap;
 }
 
 .tweet-container .col-md-2 img:first-child:hover {
@@ -229,6 +230,10 @@ main {
     display: flex;
     color: var(--gray);
     justify-content: space-around;
+}
+
+.reactions-container div {
+    padding: 10px;
 }
 
 .tweet-container div:last-child {
@@ -270,7 +275,7 @@ main {
     padding: 5px 15px;
 }
 
-.verificacion-btn:hover {
+.verificacion-btn:hover, .verUsuarios-btn:hover{
     background-color: var(--btn-hover);
     color: var(--white);
 }
@@ -350,3 +355,68 @@ main {
     display: flex;
     justify-content: space-between;
 }
+
+.verUsuarios-section {
+    padding: 50px;
+    border-bottom: 1px solid var(--gray-border);
+}
+
+.verUsuarios-btn-container {
+    display: flex;
+    justify-content: center;
+}
+
+.verUsuarios-btn {
+    background-color: var(--btn-blue);
+    color: var(--white);
+    padding: 10px 30px;
+    margin-top: 5px;
+}
+
+#radio-container {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.btn-outline-primary {
+    color: var(--btn-blue);
+    border-color: var(--btn-blue);
+}
+
+.btn-check:active + .btn-outline-primary, .btn-check:checked + .btn-outline-primary, .btn-outline-primary.active, .btn-outline-primary.dropdown-toggle.show, .btn-outline-primary:active {
+    background-color: var(--btn-blue);
+    border-color: var(--btn-blue);
+}
+
+.btn-check:hover + .btn-outline-primary, .btn-check:checked + .btn-outline-primary, .btn-outline-primary.hove:hover, .btn-outline-primary.dropdown-toggle.show, .btn-outline-primary:hover {
+    background-color: var(--btn-blue);
+    border-color: var(--btn-blue);
+}
+
+.comentarios-container:hover {
+    background-color: rgb(48, 47, 47);
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.comment-container {
+    display: flex;
+    border: 1px solid var(--gray-border);
+    width: 100%;
+    padding: 20px;
+    color: var(--white);
+    font-size: 16px;
+    flex-wrap: wrap;
+    margin-top: 5px;
+}
+
+.template-comments-container {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+    border-bottom: 1px solid var(--gray-border);
+}
+
+
