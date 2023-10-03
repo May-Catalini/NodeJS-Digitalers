@@ -86,7 +86,7 @@ const changeUser = async () => {
   }
 
   await getUserData();
-  createButtonsListeners();
+  showComments();
 }
 
 const selectUser = (event) => {
