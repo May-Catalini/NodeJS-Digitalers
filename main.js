@@ -8,15 +8,6 @@ let userName;
 let userEmail;
 let user = 1;
 
-const imagenes = [
-  './img/fotos de perfil/1.png',
-  './img/fotos de perfil/2.png',
-  './img/fotos de perfil/3.png',
-  './img/fotos de perfil/lateral1.png',
-  './img/fotos de perfil/lateral2.png',
-  './img/fotos de perfil/lateral3.png',
-];
-
 const getUserData = async () => {
   const response = await fetch(`https://jsonplaceholder.typicode.com/users/${user}`);
   const userData = await response.json();
