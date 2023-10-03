@@ -99,19 +99,14 @@ const selectUser = (event) => {
   }      
 }
 
-const createButtonsListeners= () => {
+const showComments = () => {
 
   for( let i = 0 ; i<10;i++ ){
     const button = document.getElementById( `comentarios-container-${i}`);
-    console.log(button);
 
     button.addEventListener('click', async ()=>{
       const commentContainer = document.getElementById(`comment-${i}`);
-      if (commentContainer.classList.contains('d-none')) {
-        commentContainer.classList.remove('d-none');
-      } else {
-        commentContainer.classList.add('d-none');
-      }
+      commentContainer.classList.toggle('d-none');
   
       const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${user}/comments`);
       const comentarios = await response.json();
@@ -144,8 +139,9 @@ const createButtonsListeners= () => {
 document.addEventListener('DOMContentLoaded', async ()=>{
   await getUserData();
   listUser();
-  createButtonsListeners();
+  showComments();
 });
+
 verUsuarioBtn.addEventListener('click', changeUser);
 radioContainer.addEventListener('change', selectUser);
 
